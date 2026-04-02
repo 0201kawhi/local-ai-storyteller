@@ -1,0 +1,5 @@
+{
+  "name": "Local AI Storyteller",
+  "description": "A system to generate short stories using Qwen and synthesize speech using VITS, with a local deployment guide.",
+  "requestFramePermissions": []
+}
