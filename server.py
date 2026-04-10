@@ -29,6 +29,7 @@ llama_process = subprocess.Popen([
     LLAMA_SERVER_BIN,
     "--model", "/home/kawhi/Qwen3.5-4B-Q4_K_M.gguf",
     "--alias", "Qwen3.5-4B-GGUF",
+    "--host", "0.0.0.0",
     "--ctx-size", "16384",
     "--temp", "0.7",
     "--top-k", "20",

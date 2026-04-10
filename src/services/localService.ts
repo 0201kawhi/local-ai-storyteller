@@ -1,6 +1,10 @@
+const getApiBaseUrl = () => {
+  return `http://${window.location.hostname}:8000`;
+};
+
 export async function generateStoryWithLocal(theme: string, details: string): Promise<string> {
   try {
-    const response = await fetch('http://localhost:8000/generate_story', {
+    const response = await fetch(`${getApiBaseUrl()}/generate_story`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,13 +20,13 @@ export async function generateStoryWithLocal(theme: string, details: string): Pr
     return data.story;
   } catch (error) {
     console.error('Local API Error:', error);
-    throw new Error('無法連接到本地後端。請確認您已經啟動了本地 FastAPI 伺服器 (http://localhost:8000)。');
+    throw new Error(`無法連接到本地後端。請確認您已經啟動了本地 FastAPI 伺服器 (${getApiBaseUrl()})。`);
   }
 }
 
 export async function generateAudioWithLocal(text: string): Promise<string | null> {
   try {
-    const response = await fetch('http://localhost:8000/generate_audio', {
+    const response = await fetch(`${getApiBaseUrl()}/generate_audio`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
