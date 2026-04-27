@@ -71,3 +71,4 @@ npm install
    npm run dev
    ```
 3. 開啟瀏覽器訪問 `http://localhost:3000`。
+![image](demo.png)
